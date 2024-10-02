@@ -35,7 +35,7 @@ app.use(express.json());
 
 // Home Route
 app.get("/", (request: Request, response: Response, next: NextFunction) => {
-  response.json({ message: "Welcome our server" });
+  response.json({ message: "Welcome to my final prroject capstone server " });
 });
 
 // Error Handling Middleware
