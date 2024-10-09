@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 // Import Express and Middleware
 import express, { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
@@ -14,6 +13,12 @@ import cors from "cors";
 const axios = require("axios");
 
 // Import Route Handlers
+import { addTask } from "./routes/addTask";
+import { getAllTasks } from "./routes/getTask";
+import { updateTask } from "./routes/updateTask";
+import { deleteTask } from "./routes/deleteTask";
+
+// Import Route Handlers
 
 // Create an Express application
 const app = express();
@@ -24,8 +29,7 @@ const PORT = process.env.PORT;
 //define our Middleware
 // Define CORS Options
 const corsOptions = {
-  origin: process.env.CAPSTONE4_SERVER || "*",
-  methods: ["GET", "POST", "DELETE", "PUT"],
+  origin: process.env.CLIENT_URL,
   optionsSuccessStatus: 200,
 };
 
@@ -35,8 +39,23 @@ app.use(express.json());
 
 // Home Route
 app.get("/", (request: Request, response: Response, next: NextFunction) => {
-  response.json({ message: "Welcome to my final prroject capstone server " });
+  response.json({ message: "Welcome to my final project. Capstone Server " });
 });
+
+// get all routes
+app.get("/tasks", getAllTasks);
+
+// Get a specific task by ID
+// app.get("/tasks/:id", getTaskById);
+
+//Add a task
+app.post("/tasks", addTask);
+
+// Update a task
+app.put("/tasks/:id", updateTask);
+
+//Delete a task by id
+app.delete("/tasks/:id", deleteTask);
 
 // Error Handling Middleware
 app.use(

@@ -12,11 +12,13 @@
   "description": "",
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
+    "@types/axios": "^0.9.36",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "supabase": "^1.203.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
