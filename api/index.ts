@@ -2,16 +2,20 @@ require("dotenv").config();
 
 import express, { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
-import supabase from "../supabaseInstance";
+import supabase from "./supabaseInstance";
 import cors from "cors";
 const axios = require("axios");
 
 import { submitContactForm } from "./routes/contactRoutes";
-import { addTask } from "./routes/addTask";
-import { getTaskById } from "./routes/getTaskById";
-import { getAllTasks } from "./routes/getTask";
-import { updateTask } from "./routes/updateTask";
-import { deleteTask } from "./routes/deleteTask";
+import { addNote } from "./routes/addNotes";
+import { getNoteById } from "./routes/getNotesById";
+import { getAllNotes } from "./routes/getNotes";
+import { updateNote } from "./routes/updateNotes";
+import { deleteNote } from "./routes/deleteNotes";
+import {
+  fetchUnsplashImages,
+  fetchJsonPlaceholderPosts,
+} from "./routes/images";
 
 const app = express();
 
@@ -31,11 +35,13 @@ app.get("/", (request: Request, response: Response, next: NextFunction) => {
 });
 
 app.post("/api/contact", submitContactForm);
-app.get("/tasks", getAllTasks);
-// app.get("/tasks/:id", getTaskById);
-app.post("/tasks", addTask);
-app.put("/tasks/:id", updateTask);
-app.delete("/tasks/:id", deleteTask);
+app.get("/notes", getAllNotes);
+app.get("/notes/:id", getNoteById);
+app.post("/notes", addNote);
+app.put("/notes/:id", updateNote);
+app.delete("/notes/:id", deleteNote);
+app.get("/api/unsplash", fetchUnsplashImages);
+app.get("/api/posts", fetchJsonPlaceholderPosts);
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {

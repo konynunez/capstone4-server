@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import instance from "../../supabaseInstance";
+import instance from "../supabaseInstance";
 import { Task } from "../../types";
 
 // Get all tasks
-export const getAllTasks = async (
+export const getAllNotes = async (
   req: Request,
   res: Response,
   next: NextFunction

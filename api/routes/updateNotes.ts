@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import instance from "../../supabaseInstance";
-import { Task } from "../../types";
+import instance from "../supabaseInstance";
 
 interface NoteResponse {
   id: string;
@@ -11,8 +10,8 @@ interface NoteResponse {
   updated_at?: string;
 }
 
-// Update a task
-export const updateTask = async (
+// Update a note
+export const updateNote = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -31,16 +30,16 @@ export const updateTask = async (
       `/notes?id=eq.${id}`
     );
 
-    const updatedTask: NoteResponse | undefined = updatedResponse.data[0];
+    const updatedNote: NoteResponse | undefined = updatedResponse.data[0];
 
-    if (!updatedTask) {
-      res.status(404).json({ message: "Task not found." });
+    if (!updatedNote) {
+      res.status(404).json({ message: "Note not found." });
       return;
     }
 
     res.status(200).json({
-      message: "Task updated successfully",
-      data: updatedTask,
+      message: "Note updated successfully",
+      data: updatedNote,
     });
   } catch (error) {
     next(error);
