@@ -6,6 +6,7 @@ import supabase from "./supabaseInstance";
 import cors from "cors";
 const axios = require("axios");
 
+import docs from "./routes/docs";
 import { submitContactForm } from "./routes/contactRoutes";
 import { addNote } from "./routes/addNotes";
 import { getNoteById } from "./routes/getNotesById";
@@ -28,6 +29,10 @@ app.use(express.json());
 // Home Route
 app.get("/", (request: Request, response: Response, next: NextFunction) => {
   response.json({ message: "Welcome to my final project. Capstone Server " });
+});
+
+app.get("/docs", (req: Request, res: Response) => {
+  res.json(docs);
 });
 
 app.post("/api/contact", submitContactForm);
@@ -55,7 +60,7 @@ app.use((req: Request, res: Response) => {
   });
 });
 
-const server = app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`The server is running on http://localhost:${PORT}`);
 });
 

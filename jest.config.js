@@ -3,6 +3,6 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   transform: {
-    "^.+\\.tsx?$": "ts-jest", // Fix the regex for TypeScript files
+    "^.+\\.tsx?$": "ts-jest",
   },
 };
