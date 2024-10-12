@@ -28,7 +28,7 @@ app.use(express.json());
 
 // Home Route
 app.get("/", (request: Request, response: Response, next: NextFunction) => {
-  response.json({ message: "Welcome to my final project. Capstone Server " });
+  response.json(docs);
 });
 
 app.get("/docs", (req: Request, res: Response) => {
