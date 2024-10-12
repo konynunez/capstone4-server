@@ -12,10 +12,6 @@ import { getNoteById } from "./routes/getNotesById";
 import { getAllNotes } from "./routes/getNotes";
 import { updateNote } from "./routes/updateNotes";
 import { deleteNote } from "./routes/deleteNotes";
-import {
-  fetchUnsplashImages,
-  fetchJsonPlaceholderPosts,
-} from "./routes/images";
 
 const app = express();
 
@@ -40,8 +36,6 @@ app.get("/notes/:id", getNoteById);
 app.post("/notes", addNote);
 app.put("/notes/:id", updateNote);
 app.delete("/notes/:id", deleteNote);
-app.get("/api/unsplash", fetchUnsplashImages);
-app.get("/api/posts", fetchJsonPlaceholderPosts);
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
