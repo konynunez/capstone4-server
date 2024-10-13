@@ -31,10 +31,6 @@ app.get("/", (request: Request, response: Response, next: NextFunction) => {
   response.json(docs);
 });
 
-app.get("/docs", (req: Request, res: Response) => {
-  res.json(docs);
-});
-
 app.post("/api/contact", submitContactForm);
 app.get("/notes", getAllNotes);
 app.get("/notes/:id", getNoteById);
@@ -53,7 +49,7 @@ app.use(
   }
 );
 
-app.use((req: Request, res: Response) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
   res.status(404).json({
     error:
       "Resource not found. Are you sure you're looking in the right place?",
