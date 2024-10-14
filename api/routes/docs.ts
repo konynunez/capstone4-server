@@ -1,4 +1,3 @@
-// Define types for the API documentation
 interface ExampleResponse {
   id?: string;
   category?: string;

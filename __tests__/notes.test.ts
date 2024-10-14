@@ -1,6 +1,6 @@
 import request from "supertest";
 import app from "../api/index";
-import axios from "../api/supabaseInstance";
+import axios from "../supabaseInstance";
 
 // Mock Axios methods for testing
 jest.mock("../api/supabaseInstance", () => ({

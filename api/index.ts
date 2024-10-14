@@ -1,8 +1,8 @@
 require("dotenv").config();
 
 import express, { Request, Response, NextFunction } from "express";
-import supabase from "./supabaseInstance";
-import cors from "cors";
+import supabase from "../supabaseInstance";
+const cors = require("cors");
 import axios from "axios";
 
 import docs from "./routes/docs";
@@ -46,8 +46,8 @@ app.use(
   }
 );
 
-app.use((req: Request, res: Response, next: NextFunction) => {
-  res.status(404).json({
+app.use((request: Request, response: Response, next: NextFunction) => {
+  response.status(404).json({
     error:
       "Resource not found. Are you sure you're looking in the right place?",
   });

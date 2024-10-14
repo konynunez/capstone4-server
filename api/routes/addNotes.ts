@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import instance from "../supabaseInstance";
+import instance from "../../supabaseInstance";
 
 export const addNote = async (
   req: Request,
