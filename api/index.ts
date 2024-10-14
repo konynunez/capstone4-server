@@ -14,7 +14,7 @@ import { updateNote } from "./routes/updateNotes";
 import { deleteNote } from "./routes/deleteNotes";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 const corsOptions = {
   origin: process.env.CLIENT_URL,
