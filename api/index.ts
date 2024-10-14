@@ -1,10 +1,9 @@
 require("dotenv").config();
 
 import express, { Request, Response, NextFunction } from "express";
-import dotenv from "dotenv";
 import supabase from "./supabaseInstance";
 import cors from "cors";
-const axios = require("axios");
+import axios from "axios";
 
 import docs from "./routes/docs";
 import { submitContactForm } from "./routes/contactRoutes";
@@ -15,8 +14,7 @@ import { updateNote } from "./routes/updateNotes";
 import { deleteNote } from "./routes/deleteNotes";
 
 const app = express();
-
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: process.env.CLIENT_URL,
@@ -26,7 +24,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Home Route
 app.get("/", (request: Request, response: Response, next: NextFunction) => {
   response.json(docs);
 });
