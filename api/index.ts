@@ -16,7 +16,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: process.env.CLIENT_URL || "https://capstone4-client.vercel.app/",
   optionsSuccessStatus: 200,
 };
 
