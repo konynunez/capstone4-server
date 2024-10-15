@@ -1,8 +1,6 @@
-# **Capstone4-Server: Notes API**
+# **$$Notes API: Capstone4-Server$$**
 
-**Welcome to the Notes API!**
-
-This API allows users to create, retrieve, update, and delete notes. It is built using Express.js and TypeScript, and includes Jest testing for the core functionalities.
+Notes API allows users to create, retrieve, update, and delete notes. It is built using Express.js and TypeScript, and includes Jest testing for the core functionalities.
 
 ## Features
 
@@ -16,9 +14,8 @@ This API allows users to create, retrieve, update, and delete notes. It is built
 
 Ensure the following are installed:
 
-- [ ] Node.js
-- [ ] npm
-- [ ] Clone the repository
+- [Node.js](https://nodejs.org/) (version 14 or higher). For installation, visit the [Node.js download page](https://nodejs.org/en/download/).
+- [npm](https://www.npmjs.com/) (Node Package Manager). For documentation, visit [npm documentation](https://docs.npmjs.com/).
 
 ### Github Repository
 
