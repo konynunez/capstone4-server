@@ -53,3 +53,4 @@ if (process.env.NODE_ENV !== "test") {
 ### License
 
 This project is licensed under the MIT License.
+.
