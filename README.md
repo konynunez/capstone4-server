@@ -23,8 +23,6 @@ git clone
 **https://github.com/konynunez/capstone4-server.git**
 cd capstone4-server
 
-### Deployment Site
-
 ### Running Tests
 
 This project includes a full suite of tests using Jest and Supertest. To run the tests:
@@ -53,4 +51,3 @@ if (process.env.NODE_ENV !== "test") {
 ### License
 
 This project is licensed under the MIT License.
-.
