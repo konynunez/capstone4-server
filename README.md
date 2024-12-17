@@ -44,7 +44,7 @@ if (process.env.NODE_ENV !== "test") {
 - Axios
 - Cors
 - Dotenv
-- Jest/Supertest
+- Jest
 - Supabase
 - Vercel
 
